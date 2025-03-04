@@ -46,30 +46,49 @@
         </form>
     </div>
     <div id="signature-container" class="container hidden">
-        <table id="signature-card" cellspacing="0" cellpadding="0" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; width: 600px; border-collapse: collapse; line-height: 150%;">
-            <tr>
-                <td style="padding: 12px; vertical-align: middle; width: 100px;">
-                    <img id="profile-img" src="" alt="" style="width: 100px; border-radius: 5px;">
-                </td>
-                <td style="padding: 12px; vertical-align: middle;">
-                    <p id="name-render" style="margin: 0; font-size: 16px; font-weight: bold; color: #0274c8;"></p>
-                    <p id="job-render" style="margin: 0; font-size: 14px;"></p>
-                    <p style="margin: 0; font-size: 12px; font-weight: bold;">Elevate Health Technologies</p>
-                </td>
-                <td style="padding: 16px; vertical-align: middle; text-align: left; border-left: 1px solid #0274c8;">
-                    <p style="margin: 0; font-size: 14px;">
-                        <a id="phone-render" href="" style="text-decoration: none; color: black;"></a><br>
-                        <a id="email-render" href="" style="text-decoration: none; color: black;"></a><br>
-                        <a href="https://www.ElevateHT.com" style="text-decoration: none; color: black;">🔗  www.ElevateHT.com</a>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" style="padding: 16px; text-align: left; border-top: 1px solid #0274c8;">
-                    <img src="https://2942703.fs1.hubspotusercontent-na1.net/hubfs/2942703/Asset%2040@4x.png" alt="Elevate Health Technologies" style="height: 70px;">
-                </td>
-            </tr>
-        </table>
+            
+            <table id="signature-card" role="presentation" width="600" cellspacing="0" cellpadding="0" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 150%; border-collapse: collapse;">
+                <tr>
+                    <!-- Profile Image -->
+                    <td width="120" style="padding-bottom: 16px; vertical-align: middle;">
+                        <img id="profile-img" src="" alt="" width="100" style="border-radius: 5px;">
+                    </td>
+            
+                    <!-- Name, Title, Company -->
+                    <td style="vertical-align: middle;">
+                        <p id="name-render" style="margin: 0; font-size: 16px; font-weight: bold; color: #0274c8;"></p>
+                        <p id="job-render" style="margin: 0; font-size: 14px;"></p>
+                        <p style="margin: 0; font-size: 12px; font-weight: bold;">Elevate Health Technologies</p>
+                    </td>
+            
+                    <!-- Contact Info (With Border) -->
+                    <td width="250" style="vertical-align: middle; padding-left: 16px; border-left: 1px solid #0274c8; line-height: 150%; font-size: 14px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td><span>📞</span> <span> </span> </td>
+                                <td><a id="phone-render" href="" style="text-decoration: none; color: black;"></a></td>
+                            </tr>
+                            <tr>
+                                <td><span>📧 </span> <span> </span> </td>
+                                <td><a id="email-render" href="" style="text-decoration: none; color: black;"></a></td>
+                            </tr>
+                            <tr>
+                                <td><span>🔗 </span> <span> </span> </td>
+                                <td><a href="https://www.ElevateHT.com" style="text-decoration: none; color: black;">www.ElevateHT.com</a></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            
+                <!-- Logo Row -->
+                <tr>
+                    <td colspan="3" style="border-top: 1px solid #0274c8; padding-top: 16px; text-align: left;">
+                        <img src="https://2942703.fs1.hubspotusercontent-na1.net/hubfs/2942703/Asset%2040@4x.png" alt="Elevate Health Technologies" width="170">
+                    </td>
+                </tr>
+            </table>
+            
+
     </div>
     <div class="container">
         <button class="hidden" id="copy-button">

@@ -29,9 +29,9 @@ form.addEventListener("submit", (e) => {
     profileImg.src = imageInput;
     nameRender.textContent = nameInput;
     jobRender.textContent = jobInput;
-    phoneRender.textContent = `📞 ${phoneInput}`;
+    phoneRender.textContent = `${phoneInput}`;
     phoneRender.href = `tel:${phoneInput}`;
-    emailRender.textContent = `✉️ ${emailInput}`;
+    emailRender.textContent = `${emailInput}`;
     emailRender.href = `mailto:${emailInput}`;
     
     signatureContainer.classList.remove("hidden");
