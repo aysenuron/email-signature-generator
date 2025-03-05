@@ -14,6 +14,26 @@ const phoneRender = document.getElementById("phone-render");
 
 const copyBtn = document.getElementById("copy-button");
 
+function formatPhoneNumber(phoneNumber) {
+    let numbers = phoneNumber.replace(/\D/g, ""); // Remove non-numeric characters
+    let formattedNumber = "";
+
+    if (numbers.length > 0) {
+        formattedNumber = `(${numbers.substring(0, 3)}`;
+    }
+    if (numbers.length >= 4) {
+        formattedNumber += `) ${numbers.substring(3, 6)}`;
+    }
+    if (numbers.length >= 7) {
+        formattedNumber += `-${numbers.substring(6, 10)}`;
+    }
+
+    return formattedNumber;
+}
+
+document.getElementById("phone").addEventListener("input", (e) => {
+    e.target.value = formatPhoneNumber(e.target.value);
+});
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -25,11 +45,14 @@ form.addEventListener("submit", (e) => {
     const emailInput = document.getElementById("email").value;
     const phoneInput = document.getElementById("phone").value;
 
+    //Format phone number
+    const formattedPhoneNumber = formatPhoneNumber(phoneInput);
+
     //Form render
     profileImg.src = imageInput;
     nameRender.textContent = nameInput;
     jobRender.textContent = jobInput;
-    phoneRender.textContent = `${phoneInput}`;
+    phoneRender.textContent = `${formattedPhoneNumber}`;
     phoneRender.href = `tel:${phoneInput}`;
     emailRender.textContent = `${emailInput}`;
     emailRender.href = `mailto:${emailInput}`;
