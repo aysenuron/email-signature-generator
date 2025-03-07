@@ -11,6 +11,7 @@ const nameRender = document.getElementById("name-render");
 const jobRender = document.getElementById("job-render");
 const emailRender = document.getElementById("email-render");
 const phoneRender = document.getElementById("phone-render");
+const cellRender = document.getElementById("cell-render");
 
 const copyBtn = document.getElementById("copy-button");
 
@@ -35,6 +36,10 @@ document.getElementById("phone").addEventListener("input", (e) => {
     e.target.value = formatPhoneNumber(e.target.value);
 });
 
+document.getElementById("cell").addEventListener("input", (e) => {
+    e.target.value = formatPhoneNumber(e.target.value);
+});
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -44,9 +49,11 @@ form.addEventListener("submit", (e) => {
     const jobInput = document.getElementById("job").value;
     const emailInput = document.getElementById("email").value;
     const phoneInput = document.getElementById("phone").value;
+    const cellInput = document.getElementById("cell").value;
 
     //Format phone number
     const formattedPhoneNumber = formatPhoneNumber(phoneInput);
+    const formattedCell = formatPhoneNumber(cellInput);
 
     //Form render
     profileImg.src = imageInput;
@@ -54,6 +61,8 @@ form.addEventListener("submit", (e) => {
     jobRender.textContent = jobInput;
     phoneRender.textContent = `${formattedPhoneNumber}`;
     phoneRender.href = `tel:${phoneInput}`;
+    cellRender.textContent = `${formattedCell}`;
+    cellRender.href = `tel:${cellInput}`;
     emailRender.textContent = `${emailInput}`;
     emailRender.href = `mailto:${emailInput}`;
     
