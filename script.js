@@ -12,6 +12,7 @@ const jobRender = document.getElementById("job-render");
 const emailRender = document.getElementById("email-render");
 const phoneRender = document.getElementById("phone-render");
 const cellRender = document.getElementById("cell-render");
+const cellIcon = document.getElementById("cell-icon");
 
 const copyBtn = document.getElementById("copy-button");
 
@@ -61,8 +62,15 @@ form.addEventListener("submit", (e) => {
     jobRender.textContent = jobInput;
     phoneRender.textContent = `${formattedPhoneNumber}`;
     phoneRender.href = `tel:${phoneInput}`;
-    cellRender.textContent = `${formattedCell}`;
-    cellRender.href = `tel:${cellInput}`;
+    if(cellInput) {
+        cellIcon.textContent = "📱";
+        cellRender.textContent = `${formattedCell}`;
+        cellRender.href = `tel:${cellInput}`;
+    } else if (!cellInput) {
+        cellIcon.textContent = "";
+        cellRender.textContent = "";
+        cellRender.href = "";
+    }
     emailRender.textContent = `${emailInput}`;
     emailRender.href = `mailto:${emailInput}`;
     
