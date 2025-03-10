@@ -15,6 +15,7 @@ const cellRender = document.getElementById("cell-render");
 const cellIcon = document.getElementById("cell-icon");
 
 const copyBtn = document.getElementById("copy-button");
+const hubspotBtn = document.getElementById("hubspot-copy");
 
 function formatPhoneNumber(phoneNumber) {
     let numbers = phoneNumber.replace(/\D/g, ""); // Remove non-numeric characters
@@ -76,6 +77,7 @@ form.addEventListener("submit", (e) => {
     
     signatureContainer.classList.remove("hidden");
     copyBtn.classList.remove("hidden");
+    hubspotBtn.classList.remove("hidden");
 
 });
 
@@ -105,4 +107,20 @@ copyBtn.addEventListener("click", () => {
 
     // Clear selection after copying
     selection.removeAllRanges();
+});
+
+
+hubspotBtn.addEventListener("click", async () => {
+    if (!signatureCard) {
+        alert("Signature not found!");
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(signatureCard.outerHTML);
+        alert("Signature HTML copied to clipboard!");
+    } catch (err) {
+        console.error("Failed to copy:", err);
+        alert("Failed to copy the signature.");
+    }
 });
