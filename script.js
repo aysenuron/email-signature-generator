@@ -9,6 +9,8 @@ const signatureCard = document.getElementById("signature-card");
 const profileImg = document.getElementById("profile-img");
 const nameRender = document.getElementById("name-render");
 const jobRender = document.getElementById("job-render");
+const meetingRender = document.getElementById("meeting-render");
+const meetingIcon = document.getElementById("meeting-icon");
 const emailRender = document.getElementById("email-render");
 const phoneRender = document.getElementById("phone-render");
 const cellRender = document.getElementById("cell-render");
@@ -50,6 +52,7 @@ form.addEventListener("submit", (e) => {
     const nameInput = document.getElementById("name").value;
     const jobInput = document.getElementById("job").value;
     const emailInput = document.getElementById("email").value;
+    const meetingInput = document.getElementById("meeting").value;
     const phoneInput = document.getElementById("phone").value;
     const cellInput = document.getElementById("cell").value;
 
@@ -71,6 +74,16 @@ form.addEventListener("submit", (e) => {
         cellIcon.textContent = "";
         cellRender.textContent = "";
         cellRender.href = "";
+    }
+
+    if(meetingInput) {
+        meetingIcon.textContent = "🗓️";
+        meetingRender.textContent = "Book a time to meet me";
+        meetingRender.href = meetingInput;
+    } else if (!meetingInput) {
+        meetingIcon.textContent = "";
+        meetingRender.textContent = "";
+        meetingRender.href = "";
     }
     emailRender.textContent = `${emailInput}`;
     emailRender.href = `mailto:${emailInput}`;

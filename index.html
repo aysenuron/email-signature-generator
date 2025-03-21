@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,700&display=swap" rel="stylesheet">
 </head>
-<body style="margin-top: 40px;">
+<body style="margin: 40px;">
     <div class="container">
         <h1><span>Elevate Health Technologies </span>Email Signature Generator</h1>
     </div>
@@ -47,15 +47,20 @@
             </label>
             <input placeholder="(XXX) XXX-XXXX"  type="text" id="cell">
 
+            <label for="meeting">
+                Enter your meeting link - will appear as "Book a time to meet me" (Optional)
+            </label>
+            <input type="text" id="meeting">
+
             <button type="submit" id="submit">Submit</button>
         </form>
     </div>
     <div id="signature-container" class="container hidden">
             
-            <table id="signature-card" role="presentation" width="600" cellspacing="0" cellpadding="0" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 150%; border-collapse: collapse;">
+            <table id="signature-card" role="presentation" width="650" cellspacing="0" cellpadding="0" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 150%; border-collapse: collapse;">
                 <tr>
                     <!-- Profile Image -->
-                    <td width="100" style="padding-bottom: 16px; vertical-align: top;">
+                    <td width="100" style="padding-bottom: 16px; vertical-align: middle;">
                         <img id="profile-img" src="" alt="" width="100" style="border-radius: 5px;">
                     </td>
             
@@ -67,7 +72,7 @@
                     </td>
             
                     <!-- Contact Info (With Border) -->
-                    <td width="250" style="vertical-align: middle; padding-left: 16px; padding-bottom: 20px; border-left: 1px solid #005ba8; line-height: 180%; font-size: 14px;">
+                    <td width="300" style="vertical-align: middle; padding-left: 16px; padding-bottom: 20px; border-left: 1px solid #005ba8; line-height: 180%; font-size: 14px;">
                         <table role="presentation" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td><span id="cell-icon" style="margin-right: 8px;"></span></td>
@@ -83,9 +88,16 @@
                                 <td><span style="margin-right: 8px;">📧</span></td>
                                 <td><a id="email-render" href="" style="text-decoration: none; color: black;"></a></td>
                             </tr>
+
+
+                            <tr>
+                                <td id="meeting-icon"><span style="margin-right: 8px;"></span></td>
+                                <td><a id="meeting-render" target="_blank" href=""></a></td>
+                            </tr>
+
                             <tr>
                                 <td><span style="margin-right: 8px;">🔗</span></td>
-                                <td><a href="https://www.ElevateHT.com" style="text-decoration: none; color: black;">www.ElevateHT.com</a></td>
+                                <td><a href="https://www.ElevateHT.com" target="_blank" style="text-decoration: none; color: black;">www.ElevateHT.com</a></td>
                             </tr>
                         </table>
                     </td>
