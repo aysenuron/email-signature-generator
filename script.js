@@ -78,7 +78,7 @@ form.addEventListener("submit", (e) => {
 
     if(meetingInput) {
         meetingIcon.textContent = "🗓️";
-        meetingRender.textContent = "Book a time to meet me";
+        meetingRender.textContent = "Book a meeting";
         meetingRender.href = meetingInput;
     } else if (!meetingInput) {
         meetingIcon.textContent = "";
